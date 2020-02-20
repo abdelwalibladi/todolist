@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import {
   Text,
   View,
-  Button,
   TouchableOpacity,
   ScrollView,
   StyleSheet,
@@ -12,9 +11,15 @@ import {
 import WorkItem from "./workItem";
 import AddWorkItem from "./AddWorkItem";
 import { connect } from "react-redux";
+import {
+  ADD,
+  REMOVE,
+  SHOW_HIDE,
+  SHOW_HIDE_MODAL
+} from "../Redux/actions/actions";
 console.disableYellowBox = true;
 class TodoList extends Component {
-  newItem = { workItem: "" };
+  newItem = { workItem: " " };
   removeItem = workItemIndex => {
     const toDoList = this.props.toDoList.slice();
     toDoList.splice(workItemIndex, 1);
@@ -24,12 +29,11 @@ class TodoList extends Component {
   addNewItem = event => {
     this.newItem.workItem = event.nativeEvent.text;
   };
-
+  editToDo = (workItemIndex, workItem) => {};
   addNewItem2 = event => {
     this.newItem.detail = event.nativeEvent.text;
   };
   addItem = () => {
-    console.log("ok" + typeof this.newItem.workItem);
     if (this.newItem.workItem.length > 3) {
       this.props.ADD({
         workItem: this.newItem.workItem,
@@ -56,6 +60,7 @@ class TodoList extends Component {
                 workItem={toDoList.workItem}
                 detail={toDoList.detail}
                 removeItem={() => this.removeItem(index)}
+                updateTodo={this.editToDo}
               />
             );
           })}
@@ -77,12 +82,32 @@ class TodoList extends Component {
     return (
       <View style={{ flex: 1 }}>
         <KeyboardAvoidingView style={{ flex: 1 }} behavior="padding">
-          <View style={{ backgroundColor: "white" }}>
-            <View style={{ backgroundColor: "red" }}>
-              <Button
-                title="Voir ma to do list "
+          <View>
+            <View>
+              <TouchableOpacity
+                style={{
+                  backgroundColor: "red",
+                  justifyContent: "center",
+                  alignContent: "center",
+                  padding: 10
+                }}
+                title="My Todos"
                 onPress={this.props.SHOW_HIDE}
-              />
+              >
+                <View style={styles.buttonContainer}>
+                  <Text
+                    style={{
+                      textAlign: "center",
+                      fontWeight: "bold",
+                      fontSize: 18,
+                      marginTop: 0,
+                      width: 400
+                    }}
+                  >
+                    My Todos{" "}
+                  </Text>
+                </View>
+              </TouchableOpacity>
             </View>
             <ScrollView>
               {workItems}
@@ -111,26 +136,26 @@ mapDispatchToProps = dispatch => {
   return {
     ADD: newItem => {
       dispatch({
-        type: "ADD",
+        type: ADD,
         payload: newItem
       });
     },
 
     REMOVE: updateWorkItemList => {
       dispatch({
-        type: "REMOVE",
+        type: REMOVE,
         payload: updateWorkItemList
       });
     },
 
     SHOW_HIDE: () => {
       dispatch({
-        type: "SHOW_HIDE"
+        type: SHOW_HIDE
       });
     },
     SHOW_HIDE_MODAL: () => {
       dispatch({
-        type: "SHOW_HIDE_MODAL"
+        type: SHOW_HIDE_MODAL
       });
     }
   };

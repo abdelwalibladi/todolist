@@ -1,0 +1,151 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App snapshot 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 2,
+      "height": 1334,
+      "marginBottom": 100,
+      "width": "100%",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#555555",
+        "borderTopLeftRadius": 10,
+        "borderTopRightRadius": 10,
+        "top": "5%",
+        "width": "95%",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "column",
+          "height": 140,
+          "justifyContent": "center",
+          "width": "100%",
+        }
+      }
+    >
+      <Text>
+        Titre:
+      </Text>
+      <TextInput
+        allowFontScaling={true}
+        placeholder="  ex : Conférence Mercredi à 15h"
+        placeholderTextColor="white"
+        rejectResponderTermination={true}
+        style={
+          Object {
+            "borderColor": "white",
+            "borderRadius": 10,
+            "borderWidth": 0.5,
+            "color": "white",
+            "fontSize": 15,
+            "height": 40,
+            "left": 10,
+            "width": "80%",
+          }
+        }
+        underlineColorAndroid="transparent"
+      />
+      <Text>
+        Détail:
+      </Text>
+      <TextInput
+        allowFontScaling={true}
+        placeholder="  ex : Aws Submit 2020"
+        placeholderTextColor="white"
+        rejectResponderTermination={true}
+        style={
+          Object {
+            "borderColor": "white",
+            "borderRadius": 10,
+            "borderWidth": 0.5,
+            "color": "white",
+            "fontSize": 15,
+            "height": 40,
+            "left": 10,
+            "width": "80%",
+          }
+        }
+        underlineColorAndroid="transparent"
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+          "justifyContent": "space-around",
+          "marginBottom": 20,
+        }
+      }
+    >
+      <View
+        accessible={true}
+        focusable={false}
+        isTVSelectable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "borderColor": "white",
+              "color": "red",
+              "fontSize": 20,
+            }
+          }
+        >
+          Retour
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        focusable={false}
+        isTVSelectable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#fff",
+              "fontSize": 20,
+            }
+          }
+        >
+          Enregister
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;

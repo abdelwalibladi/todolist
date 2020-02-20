@@ -13,20 +13,18 @@ const addWorkItem = props => {
     <View style={styles.container}>
       <View style={styles.popUpBox}>
         <View style={styles.popUpBoxItem}>
-          <Text style={styles.action}>title:</Text>
+          <Text style={styles.action}>Titre:</Text>
           <TextInput
             style={styles.input}
-            placeholder="ex : Conférence Mercredi à 15h"
-            underlineColorAndroid="black"
+            placeholder="  ex : Conférence Mercredi à 15h"
             onChange={props.inserWorkItem}
             placeholderTextColor="white"
           />
           <Text style={styles.action}>Détail:</Text>
           <TextInput
             style={styles.input}
-            underlineColorAndroid="black"
             onChange={props.inserDetail}
-            placeholder="ex :Aws Submit 2020"
+            placeholder="  ex : Aws Submit 2020"
             placeholderTextColor="white"
           />
         </View>
@@ -52,7 +50,7 @@ const styles = StyleSheet.create({
     marginBottom: 100
   },
   popUpBox: {
-    backgroundColor: "#ccc",
+    backgroundColor: "#555555",
     width: "95%",
     top: "5%",
     borderTopLeftRadius: 10,
@@ -68,9 +66,12 @@ const styles = StyleSheet.create({
   input: {
     width: "80%",
     left: 10,
-    color: "black",
+    color: "white",
     fontSize: 15,
-    height: 40
+    height: 40,
+    borderColor: "white",
+    borderWidth: 0.5,
+    borderRadius: 10
   },
   actionBox: {
     justifyContent: "space-around",

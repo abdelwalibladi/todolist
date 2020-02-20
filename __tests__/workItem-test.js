@@ -1,13 +1,13 @@
 import React from "react";
-import App from "../App";
+import workItem from "../src/Components/workItem";
 import renderer from "react-test-renderer";
 
 test("App snapshot", () => {
-  const snap = renderer.create(<App />).toJSON();
+  const snap = renderer.create(<workItem />).toJSON();
 
   expect(snap).toMatchSnapshot();
 });
 
 it("render correctly", () => {
-  const snap = renderer.create(<App />);
+  const snap = renderer.create(<workItem />);
 });

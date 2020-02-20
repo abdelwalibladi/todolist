@@ -1,6 +1,8 @@
-const ToggleWorkItemList = (state = false, action) => {
+import { SHOW_HIDE } from "../actions/actions";
+
+const ToggleWorkItemList = (state = true, action) => {
   switch (action.type) {
-    case "SHOW_HIDE":
+    case SHOW_HIDE:
       state = !state;
       break;
 

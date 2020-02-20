@@ -1,6 +1,8 @@
+import { SHOW_HIDE_MODAL } from "../actions/actions";
+
 const ToggleAddItems = (state = false, action) => {
   switch (action.type) {
-    case "SHOW_HIDE_MODAL":
+    case SHOW_HIDE_MODAL:
       state = !state;
       break;
     default:

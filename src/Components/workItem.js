@@ -1,15 +1,32 @@
 import React, { useState } from "react";
-import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
-import { MaterialIcons } from "@expo/vector-icons";
-import { bold } from "ansi-colors";
+import {
+  StyleSheet,
+  View,
+  Text,
+  TouchableOpacity,
+  TextInput
+} from "react-native";
 const workItem = props => {
   const [iscompleted, setIsCompleted] = useState(false);
-
+  const [isEditing, setIsEditing] = useState(false);
+  const [todoValue, setToDoValue] = useState("");
   const handleCompleted = () => {
     setIsCompleted(iscompleted => !iscompleted);
   };
+  const startEditing = () => {
+    let { workItem } = props.workItem;
+    setIsEditing(!isEditing);
+    setToDoValue({ todoValue: workItem });
+  };
 
-  const detail = props.detail;
+  const finishEditing = () => {
+    const { id, updateTodo } = props;
+    updateTodo(id, todoValue);
+    setIsEditing(false);
+  };
+  const controlInput = workItem => {
+    setToDoValue({ todoValue: workItem });
+  };
 
   return (
     <View style={styles.item}>
@@ -22,38 +39,92 @@ const workItem = props => {
         ></View>
       </TouchableOpacity>
       <View style={{ flex: 1 }}>
-        <Text
-          style={[
-            styles.workItem,
-            iscompleted ? styles.completedText : styles.uncompletedText
-          ]}
-        >
-          {props.workItem && (
-            <Text style={{ color: "red", fontWeight: "bold" }}>Titre: </Text>
-          )}
-          {props.workItem}
-        </Text>
-        <Text
-          style={[
-            styles.detail,
-            iscompleted ? styles.completedText : styles.uncompletedText
-          ]}
-        >
-          {props.detail && (
-            <Text style={{ color: "red", fontWeight: "bold" }}>Détail: </Text>
-          )}
-          {props.detail}
-        </Text>
+        {isEditing ? (
+          <TextInput
+            value={props.workItem}
+            style={[
+              styles.text,
+              styles.input,
+              iscompleted ? styles.strikeText : styles.unstrikeText
+            ]}
+            multiline={true}
+            returnKeyType={"done"}
+            onBlur={finishEditing}
+            onChangeText={controlInput}
+          />
+        ) : (
+          <Text
+            style={[
+              styles.workItem,
+              iscompleted ? styles.completedText : styles.uncompletedText
+            ]}
+          >
+            {props.workItem && (
+              <Text style={{ color: "black", fontWeight: "bold" }}>
+                Titre:{" "}
+              </Text>
+            )}
+            {props.workItem}
+          </Text>
+        )}
+        {isEditing ? (
+          <TextInput
+            value={props.detail}
+            style={[
+              styles.text,
+              styles.input,
+              iscompleted ? styles.strikeText : styles.unstrikeText
+            ]}
+            multiline={true}
+            returnKeyType={"done"}
+            onBlur={finishEditing}
+            onChangeText={controlInput}
+          />
+        ) : (
+          <Text
+            style={[
+              styles.detail,
+              iscompleted ? styles.completedText : styles.uncompletedText
+            ]}
+          >
+            {props.detail && (
+              <Text style={{ color: "black", fontWeight: "bold" }}>
+                Détail:{" "}
+              </Text>
+            )}
+            {props.detail}
+          </Text>
+        )}
       </View>
-
-      <View style={{ flexDirection: "row" }}>
-        <MaterialIcons
-          name="delete"
-          size={30}
-          color="red"
-          onPress={props.removeItem}
-        />
-      </View>
+      {isEditing ? (
+        <View style={styles.buttons}>
+          <TouchableOpacity onPressOut={finishEditing}>
+            <View style={styles.buttonContainer}>
+              <Text style={styles.buttonText}>✅</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+      ) : (
+        <View style={{ flexDirection: "row" }}>
+          <TouchableOpacity onPressOut={startEditing}>
+            <View style={styles.buttonContainer}>
+              <Text
+                style={[
+                  styles.buttonText,
+                  iscompleted ? styles.completedEdit : styles.uncompletedEdit
+                ]}
+              >
+                ✏
+              </Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={props.removeItem}>
+            <View style={styles.buttonContainer}>
+              <Text style={styles.buttonText}>❌</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+      )}
     </View>
   );
 };
@@ -66,7 +137,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     alignItems: "center",
     padding: 10,
-    backgroundColor: "#ccc",
+    backgroundColor: "white",
     flexDirection: "row"
   },
   workItem: {
@@ -75,6 +146,12 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     fontSize: 20,
     marginVertical: 10
+  },
+  input: {
+    borderColor: "red",
+    borderWidth: 0.5,
+    borderRadius: 10,
+    margin: 10
   },
   detail: {
     marginLeft: 10,
@@ -87,7 +164,7 @@ const styles = StyleSheet.create({
     height: 30,
     borderRadius: 15,
     borderWidth: 3,
-    marginRight: 20
+    alignItems: "center"
   },
   completedCircle: {
     borderColor: "#bbb"
@@ -101,6 +178,25 @@ const styles = StyleSheet.create({
   },
   uncompletedText: {
     color: "#353839"
+  },
+  rowContainer: {
+    flexDirection: "row",
+    width: 2,
+    alignItems: "center",
+    justifyContent: "space-between"
+  },
+  buttons: {
+    flexDirection: "row"
+  },
+  buttonContainer: {
+    marginVertical: 10,
+    marginHorizontal: 10
+  },
+  completedEdit: {
+    display: "none"
+  },
+  uncompletedEdit: {
+    display: "flex"
   }
 });
 export default workItem;

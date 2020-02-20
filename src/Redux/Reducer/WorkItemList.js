@@ -1,3 +1,7 @@
+import { ADD } from "../actions/actions";
+import { REMOVE } from "../actions/actions";
+import { EDIT } from "../actions/actions";
+
 const WorkItemList = (
   state = [
     {
@@ -19,10 +23,14 @@ const WorkItemList = (
   action
 ) => {
   switch (action.type) {
-    case "ADD":
+    case ADD:
       state = [...state, action.payload];
       break;
-    case "REMOVE":
+    case REMOVE:
+      state = action.payload;
+      break;
+
+    case EDIT:
       state = action.payload;
       break;
 
