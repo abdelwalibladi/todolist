@@ -6,6 +6,7 @@ How To Use ?
 Clone the project onto your computer and install the dependencies
 $ git clone https://github.com/abdelwalibladi/todolist.git
 $ npm install 
+Open expo 
 
 for the test : npm run test 
 
