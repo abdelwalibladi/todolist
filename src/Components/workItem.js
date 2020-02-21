@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   TextInput
 } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
 
 const workItem = props => {
   const [iscompleted, setIsCompleted] = useState(false);
@@ -66,10 +67,10 @@ const workItem = props => {
           >
             {props.workItem && (
               <Text style={{ color: "black", fontWeight: "bold" }}>
-                Titre:{" "}
+                {" "}
+                {props.workItem}
               </Text>
             )}
-            {props.workItem}
           </Text>
         )}
         {isEditing ? (
@@ -99,7 +100,7 @@ const workItem = props => {
                   isUrgent ? styles.urgent : styles.notUrgent
                 ]}
               >
-                Détail:{" "}
+                Détails:{" "}
               </Text>
             )}
             {props.detail}
@@ -130,7 +131,9 @@ const workItem = props => {
           </TouchableOpacity>
           <TouchableOpacity onPress={props.removeItem}>
             <View style={styles.buttonContainer}>
-              <Text style={styles.buttonText}>❌</Text>
+              <Text style={styles.buttonText}>
+                <Ionicons name="md-trash" size={23} color="grey" />
+              </Text>
             </View>
           </TouchableOpacity>
           {iscompleted === false ? (
@@ -142,7 +145,7 @@ const workItem = props => {
                     isUrgent ? styles.urgent : styles.notUrgent
                   ]}
                 >
-                  Hot
+                  🔥
                 </Text>
               </View>
             </TouchableOpacity>
@@ -230,7 +233,7 @@ const styles = StyleSheet.create({
     display: "flex"
   },
   hot: {
-    backgroundColor: "yellow"
+    backgroundColor: "white"
   }
 });
 export default workItem;

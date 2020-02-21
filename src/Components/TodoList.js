@@ -11,6 +11,8 @@ import {
 import WorkItem from "./workItem";
 import AddWorkItem from "./AddWorkItem";
 import { connect } from "react-redux";
+import { Ionicons } from "@expo/vector-icons";
+
 import {
   ADD,
   REMOVE,
@@ -21,9 +23,20 @@ console.disableYellowBox = true;
 class TodoList extends Component {
   newItem = { workItem: " " };
   removeItem = workItemIndex => {
-    const toDoList = this.props.toDoList.slice();
-    toDoList.splice(workItemIndex, 1);
-    this.props.REMOVE(toDoList);
+    Alert.alert("Confirmation", "Voulez-vous vraiment supprimer cette todo ?", [
+      {
+        text: "Annuler",
+        onPress: () => null
+      },
+      {
+        text: "Confirmer",
+        onPress: () => {
+          const toDoList = this.props.toDoList.slice();
+          toDoList.splice(workItemIndex, 1);
+          this.props.REMOVE(toDoList);
+        }
+      }
+    ]);
   };
 
   addNewItem = event => {
@@ -119,7 +132,9 @@ class TodoList extends Component {
           style={styles.textStyle}
           onPress={this.props.SHOW_HIDE_MODAL}
         >
-          <Text style={styles.addButtonText}>Add</Text>
+          <Text style={styles.addButtonText}>
+            <Ionicons name="md-add" size={40} color="white" />
+          </Text>
         </TouchableOpacity>
       </View>
     );
