@@ -6,10 +6,12 @@ import {
   TouchableOpacity,
   TextInput
 } from "react-native";
+
 const workItem = props => {
   const [iscompleted, setIsCompleted] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
   const [todoValue, setToDoValue] = useState("");
+  const [isUrgent, setUrgent] = useState(false);
   const handleCompleted = () => {
     setIsCompleted(iscompleted => !iscompleted);
   };
@@ -27,9 +29,12 @@ const workItem = props => {
   const controlInput = workItem => {
     setToDoValue({ todoValue: workItem });
   };
+  const pressMe = () => {
+    setUrgent(!isUrgent);
+  };
 
   return (
-    <View style={styles.item}>
+    <View style={[styles.item, isUrgent ? styles.urgent : styles.notUrgent]}>
       <TouchableOpacity onPress={handleCompleted}>
         <View
           style={[
@@ -123,6 +128,20 @@ const workItem = props => {
               <Text style={styles.buttonText}>❌</Text>
             </View>
           </TouchableOpacity>
+          {iscompleted === false ? (
+            <TouchableOpacity onPress={pressMe}>
+              <View style={styles.buttonContainer}>
+                <Text
+                  style={[
+                    styles.hot,
+                    isUrgent ? styles.urgent : styles.notUrgent
+                  ]}
+                >
+                  Hot
+                </Text>
+              </View>
+            </TouchableOpacity>
+          ) : null}
         </View>
       )}
     </View>
@@ -131,10 +150,10 @@ const workItem = props => {
 
 const styles = StyleSheet.create({
   item: {
-    width: "80%",
+    width: "90%",
     marginTop: 16,
     alignSelf: "center",
-    borderWidth: 1,
+    borderWidth: 0.4,
     alignItems: "center",
     padding: 10,
     backgroundColor: "white",
@@ -144,12 +163,12 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     flex: 1,
     fontWeight: "600",
-    fontSize: 20,
+    fontSize: 18,
     marginVertical: 10
   },
   input: {
     borderColor: "red",
-    borderWidth: 0.5,
+    borderWidth: 0.2,
     borderRadius: 10,
     margin: 10
   },
@@ -195,8 +214,14 @@ const styles = StyleSheet.create({
   completedEdit: {
     display: "none"
   },
+  urgent: {
+    backgroundColor: "red"
+  },
   uncompletedEdit: {
     display: "flex"
+  },
+  hot: {
+    backgroundColor: "yellow"
   }
 });
 export default workItem;
