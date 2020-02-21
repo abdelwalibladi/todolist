@@ -96,16 +96,19 @@ exports[`App snapshot 1`] = `
           <View>
             <View
               style={
-                Object {
-                  "alignItems": "center",
-                  "alignSelf": "center",
-                  "backgroundColor": "white",
-                  "borderWidth": 1,
-                  "flexDirection": "row",
-                  "marginTop": 16,
-                  "padding": 10,
-                  "width": "80%",
-                }
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "alignSelf": "center",
+                    "backgroundColor": "white",
+                    "borderWidth": 0.4,
+                    "flexDirection": "row",
+                    "marginTop": 16,
+                    "padding": 10,
+                    "width": "90%",
+                  },
+                  undefined,
+                ]
               }
             >
               <View
@@ -154,7 +157,7 @@ exports[`App snapshot 1`] = `
                     Array [
                       Object {
                         "flex": 1,
-                        "fontSize": 20,
+                        "fontSize": 18,
                         "fontWeight": "600",
                         "marginLeft": 10,
                         "marginVertical": 10,
@@ -195,10 +198,13 @@ exports[`App snapshot 1`] = `
                 >
                   <Text
                     style={
-                      Object {
-                        "color": "black",
-                        "fontWeight": "bold",
-                      }
+                      Array [
+                        Object {
+                          "color": "black",
+                          "fontWeight": "bold",
+                        },
+                        undefined,
+                      ]
                     }
                   >
                     Détail:
@@ -283,20 +289,62 @@ exports[`App snapshot 1`] = `
                     </Text>
                   </View>
                 </View>
+                <View
+                  accessible={true}
+                  focusable={true}
+                  isTVSelectable={true}
+                  onClick={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Object {
+                      "opacity": 1,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "marginHorizontal": 10,
+                        "marginVertical": 10,
+                      }
+                    }
+                  >
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "backgroundColor": "yellow",
+                          },
+                          undefined,
+                        ]
+                      }
+                    >
+                      Hot
+                    </Text>
+                  </View>
+                </View>
               </View>
             </View>
             <View
               style={
-                Object {
-                  "alignItems": "center",
-                  "alignSelf": "center",
-                  "backgroundColor": "white",
-                  "borderWidth": 1,
-                  "flexDirection": "row",
-                  "marginTop": 16,
-                  "padding": 10,
-                  "width": "80%",
-                }
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "alignSelf": "center",
+                    "backgroundColor": "white",
+                    "borderWidth": 0.4,
+                    "flexDirection": "row",
+                    "marginTop": 16,
+                    "padding": 10,
+                    "width": "90%",
+                  },
+                  undefined,
+                ]
               }
             >
               <View
@@ -345,7 +393,7 @@ exports[`App snapshot 1`] = `
                     Array [
                       Object {
                         "flex": 1,
-                        "fontSize": 20,
+                        "fontSize": 18,
                         "fontWeight": "600",
                         "marginLeft": 10,
                         "marginVertical": 10,
@@ -386,10 +434,13 @@ exports[`App snapshot 1`] = `
                 >
                   <Text
                     style={
-                      Object {
-                        "color": "black",
-                        "fontWeight": "bold",
-                      }
+                      Array [
+                        Object {
+                          "color": "black",
+                          "fontWeight": "bold",
+                        },
+                        undefined,
+                      ]
                     }
                   >
                     Détail:
@@ -474,20 +525,62 @@ exports[`App snapshot 1`] = `
                     </Text>
                   </View>
                 </View>
+                <View
+                  accessible={true}
+                  focusable={true}
+                  isTVSelectable={true}
+                  onClick={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Object {
+                      "opacity": 1,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "marginHorizontal": 10,
+                        "marginVertical": 10,
+                      }
+                    }
+                  >
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "backgroundColor": "yellow",
+                          },
+                          undefined,
+                        ]
+                      }
+                    >
+                      Hot
+                    </Text>
+                  </View>
+                </View>
               </View>
             </View>
             <View
               style={
-                Object {
-                  "alignItems": "center",
-                  "alignSelf": "center",
-                  "backgroundColor": "white",
-                  "borderWidth": 1,
-                  "flexDirection": "row",
-                  "marginTop": 16,
-                  "padding": 10,
-                  "width": "80%",
-                }
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "alignSelf": "center",
+                    "backgroundColor": "white",
+                    "borderWidth": 0.4,
+                    "flexDirection": "row",
+                    "marginTop": 16,
+                    "padding": 10,
+                    "width": "90%",
+                  },
+                  undefined,
+                ]
               }
             >
               <View
@@ -536,7 +629,7 @@ exports[`App snapshot 1`] = `
                     Array [
                       Object {
                         "flex": 1,
-                        "fontSize": 20,
+                        "fontSize": 18,
                         "fontWeight": "600",
                         "marginLeft": 10,
                         "marginVertical": 10,
@@ -652,6 +745,45 @@ exports[`App snapshot 1`] = `
                   >
                     <Text>
                       ❌
+                    </Text>
+                  </View>
+                </View>
+                <View
+                  accessible={true}
+                  focusable={true}
+                  isTVSelectable={true}
+                  onClick={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Object {
+                      "opacity": 1,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "marginHorizontal": 10,
+                        "marginVertical": 10,
+                      }
+                    }
+                  >
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "backgroundColor": "yellow",
+                          },
+                          undefined,
+                        ]
+                      }
+                    >
+                      Hot
                     </Text>
                   </View>
                 </View>

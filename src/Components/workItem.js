@@ -93,7 +93,12 @@ const workItem = props => {
             ]}
           >
             {props.detail && (
-              <Text style={{ color: "black", fontWeight: "bold" }}>
+              <Text
+                style={[
+                  styles.titre,
+                  isUrgent ? styles.urgent : styles.notUrgent
+                ]}
+              >
                 Détail:{" "}
               </Text>
             )}
@@ -177,6 +182,10 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     fontSize: 15,
     marginVertical: 10
+  },
+  titre: {
+    color: "black",
+    fontWeight: "bold"
   },
   circle: {
     width: 30,

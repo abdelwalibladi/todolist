@@ -2,7 +2,7 @@ import React from "react";
 import workItem from "../src/Components/workItem";
 import renderer from "react-test-renderer";
 
-test("App snapshot", () => {
+test("work item  snapshot", () => {
   const snap = renderer.create(<workItem />).toJSON();
 
   expect(snap).toMatchSnapshot();
