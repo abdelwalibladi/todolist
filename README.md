@@ -14,6 +14,6 @@ the Mytodos button hide and show the todos
 the Circle is Touchable and is for the finished todos
 
 main sree : 
-![Screenshot_20200221-120143_Expo](https://user-images.githubusercontent.com/61286819/75029288-13b0a400-54a2-11ea-8bfc-029bf6ea9acc.jpg)
 ![Screenshot_20200221-120151_Expo](https://user-images.githubusercontent.com/61286819/75029292-14e1d100-54a2-11ea-9350-8eee0e8146d3.jpg)
+![Screenshot_20200221-100108_Expo](https://user-images.githubusercontent.com/61286819/75020020-363ac100-5492-11ea-84c9-a69ca0455091.jpg)
 
