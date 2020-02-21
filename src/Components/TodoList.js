@@ -42,7 +42,7 @@ class TodoList extends Component {
       this.props.SHOW_HIDE_MODAL();
       this.newItem = {};
     } else {
-      Alert.alert("Oops! ", "le Titre doit étre supérieure a 3 caractére", [
+      Alert.alert("Oops! ", "Le titre doit être supérieure a 3 caractères", [
         { text: "Retour", onPress: () => console.log("alert") }
       ]);
     }
