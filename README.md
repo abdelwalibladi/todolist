@@ -11,7 +11,7 @@ Open expo
 for the test : npm run test 
 
 the Mytodos button hide and show the todos 
-the Cicle is Touchable and is for the finished todos
+the Circle is Touchable and is for the finished todos
 
 main sree : 
 ![Screenshot_20200221-120143_Expo](https://user-images.githubusercontent.com/61286819/75029288-13b0a400-54a2-11ea-8bfc-029bf6ea9acc.jpg)
